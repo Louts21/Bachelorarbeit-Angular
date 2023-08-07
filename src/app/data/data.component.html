@@ -1,0 +1,78 @@
+<div>
+    <div class="dataItems" *ngIf="road != 'Empty'; else noNominatimReverseData">
+        Nominatim Reverse: {{road}}, {{hamlet}}, {{city}}
+        <p class="rightDataStuff">
+            Lat:
+            <input id="inputLat" name="inputLat1" type="text" [(ngModel)]="inputLat" placeholder="52.536940" />
+            Lon:
+            <input id="inputLon" name="inputLon1" type="text" [(ngModel)]="inputLon" placeholder="13.649490" />
+            <button id="nominatimReverseButton" class="submitButton" (click)="submitInput($event)">
+                Submit
+            </button>
+        </p>
+    </div>
+    <div class="dataItems" *ngIf="lat != '0'; else noNominatimData">
+        Nominatim: {{lat}}, {{lon}}
+        <p class="rightDataStuff">
+            Street name:
+            <input id="inputStreetname" name="inputStreetname1" type="text" [(ngModel)]="inputStreetname"
+                placeholder="Käthe-Kollwitz-Straße" />
+            House number:
+            <input id="inputHousenumber" name="inputHousenumber1" type="text" [(ngModel)]="inputHousenumber"
+                placeholder="12" />
+            City:
+            <input id="inputCity" name="inputCity1" type="text" [(ngModel)]="inputCity" placeholder="Luckenwalde" />
+            <button id="nominatimButton" class="submitButton" (click)="submitInput($event)">Submit</button>
+        </p>
+    </div>
+    <div class="dataItems" *ngIf="databankData == {}; else noDatabankData">
+        Own DB data:
+        <pre>{{databankData}}</pre>
+        <p class="rightDataStuff">
+            Database URL:
+            <input id="inputDbData" name="inputDbData1" type="text" [(ngModel)]="inputDBUrl" placeholder="..." />
+            <button id="databankButton" class="submitButton" (click)="submitInput($event)">Submit</button>
+        </p>
+    </div>
+    <ng-template #noNominatimReverseData>
+        <div class="dataItems">
+            Nominatim Reverse: Empty JSON
+            <p class="rightDataStuff">
+                Lat:
+                <input id="inputLat" name="inputLat2" type="text" [(ngModel)]="inputLat" placeholder="52.536940" />
+                Lon:
+                <input id="inputLon" name="inputLon2" type="text" [(ngModel)]="inputLon" placeholder="13.649490" />
+                <button id="nominatimReverseButton" class="submitButton">
+                    Submit
+                </button>
+            </p>
+        </div>
+    </ng-template>
+    <ng-template #noNominatimData>
+        <div class="dataItems">
+            Nominatim Reverse: Empty JSON
+            <p class="rightDataStuff">
+                Street name:
+                <input id="inputStreetname" name="inputStreetname2" type="text" [(ngModel)]="inputStreetname"
+                    placeholder="Käthe-Kollwitz-Straße" />
+                House number:
+                <input id="inputHousenumber" name="inputHousenumber2" type="text" [(ngModel)]="inputHousenumber"
+                    placeholder="12" />
+                City:
+                <input id="inputCity" name="inputCity2" type="text" [(ngModel)]="inputCity" placeholder="Luckenwalde" />
+                <button id="nominatimButton" class="submitButton">Submit</button>
+            </p>
+        </div>
+    </ng-template>
+    <ng-template #noDatabankData>
+        <div class="dataItems">
+            Own DB data: 
+            <pre>Empty JSON</pre>
+            <p class="rightDataStuff">
+                Database URL:
+                <input id="inputDbData" name="inputDbData2" type="text" [(ngModel)]="inputDBUrl" placeholder="..." />
+                <button class="submitButton">Submit</button>
+            </p>
+        </div>
+    </ng-template>
+</div>

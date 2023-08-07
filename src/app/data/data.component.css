@@ -1,0 +1,25 @@
+.rightDataStuff {
+    float: right;
+    margin-right: 1rem;
+    color: white;
+}
+
+.leftDataStuff {
+    float: right;
+    margin-right: 1rem;
+    color: white;
+}
+
+.dataItems {
+    display: block;
+    color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 2rem;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.submitButton {
+    background-color: greenyellow;
+}
