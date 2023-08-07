@@ -1,10 +1,12 @@
 # SimpleAngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+You can install it localy. Just use this guide: https://angular.io/guide/setup-local
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+You can use `npm install` like always to install all packages.
+After installing: Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
